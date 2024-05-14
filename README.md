@@ -28,18 +28,17 @@ create-react-app <app_name>
 
 #### Using React Dev Tools
 <img src="assets/images/react_dev_tool.png"/>
-In production build, src code gets minified.
+In production build, src code gets minified. For prod, use `npm run build`
 
 ## Components
 ###### Conventions
 1. One compoenent in one file
 2. Name of file should be same as name of component
 3. Name of component should be in PascalCase
-4. Every component returns, and rendered on UI
+4. Every component returns, and only one HTML tag which is rendered on UI
 5. `App` contains everything
 
 #### Creating custom component:
-Adjacent HTML tags must have one wrapper parent tag (here `<>`)
 ```
 import React from 'react';
 
@@ -48,16 +47,18 @@ function MyCustomComp() {
         <>
             <h1>Gaurav Kabra</h1>
             <h6>This is a custom component</h6>
+            <p>This is {"JSX Expression in React".toUpperCase()}</p>
         </>
     )
 }
 
 export default MyCustomComp;
 ```
+Note that adjacent HTML tags must have one wrapper parent tag (here `<>`).
 
 And in `App.js`:
 ```
-import MyCustomComp from './MyCustomComp/MyCustomComp';
+import MyCustomComp from './components/MyCustomComp';
 
 // some code
 
@@ -67,3 +68,5 @@ return (
     </div>
 );
 ```
+
+<img src="./assets/images/custom_comp.png"/>

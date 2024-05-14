@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import MyCustomComp from './MyCustomComp/MyCustomComp';
+import MyCustomComp from './components/MyCustomComp';
+import Product from './components/Product';
 
 function App() {
 
@@ -27,12 +28,23 @@ function App() {
   //   </div>
   // );
 
+
   /**
    * Code to test custom component
    */
+
+  // return (
+  //   <div className="App">
+  //     <MyCustomComp/>
+  //   </div>
+  // );
+
+  /**
+   * Code to render a custom Amazon product tile
+   */
   return (
     <div className="App">
-      <MyCustomComp/>
+      <Product/>
     </div>
   );
 }
