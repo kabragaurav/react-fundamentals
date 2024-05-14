@@ -24,4 +24,6 @@ create-react-app <app_name>
 - Components in React are just like HTML tags 
 - Virtual DOM : Traditionally, all records are updated (even unchanged ones, as can be seen from Dev Console -> Elements -> highlighting blink). So in React, clone is created with latest values and then only diff is rendered (reconciliation). And clone is created only once and then incrementally changed. E.g. applying filters on Amazon will result in some results already on UI
 
-
+#### Using React Dev Tools
+<img src="assets/images/react_dev_tool.png"/>
+In production build, src code gets minified.
