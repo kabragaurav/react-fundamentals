@@ -6,6 +6,11 @@
 - CRA (Create React App) extension
 - React Dev Tools extension or in <a href="https://chromewebstore.google.com/detail/fmkadmapgofadopljbjfkapdkoienihi">Chrome</a>
 
+```
+node -v # v20.13.1
+npm -v  # 10.5.2
+```
+
 Creating react app: `npx create-react-app <app_name>` <br/>
 (npx replaces npm -g from npm version 6)
 
@@ -25,6 +30,7 @@ create-react-app <app_name>
 - Virtual DOM : Traditionally, all records are updated (even unchanged ones, as can be seen from Dev Console -> Elements -> highlighting blink). So in React, clone is created with latest values and then only diff is rendered (reconciliation). And clone is created only once and then incrementally changed. E.g. applying filters on Amazon will result in some results already on UI
 - `ReactDOM` is virtual DOM in React and it builds by finding element with ID `root` (see `index.js`). So as soon as we change outside virtual DOM, React cannot help
 - We can write HTML in React code and hence called JSX
+- Redux is state management in JS and since React does not have one, Redux is used
 
 #### Using React Dev Tools
 <img src="assets/images/react_dev_tool.png"/>
@@ -110,3 +116,8 @@ function Product(props) {
     );
 }
 ```
+
+Only Product has props,
+
+<img src="assets/images/p_prop.png"/>
+<img src="assets/images/plist_prop.png"/>
