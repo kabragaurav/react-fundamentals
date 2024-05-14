@@ -70,3 +70,43 @@ return (
 ```
 
 <img src="./assets/images/custom_comp.png"/>
+
+### Communication
+1. Communication always happens Parent <=> Child. So, parent cannot talk directly to grandchild or vice-versa.
+2. Parent to child: props
+
+Parent:
+
+```
+function ProductList() {
+    const data = {
+        id: 1,
+        name: 'Amazon Atta',
+        price: 1200,
+        image_url: "https://www.pillsbury.in/wp-content/uploads/2021/09/Organic-Atta_LS.jpg",
+        in_stock: 10,
+    };
+
+    return (
+        <div>
+            <Product data={data}/>
+        </div>
+    )
+}
+```
+
+Child:
+```
+function Product(props) {
+    const data = props.data;
+    return (
+        <div>
+            <img src={data.image_url}/>
+            <h5>{data.name}</h5>
+            <h5>{data.price}</h5>
+            <h5>{data.in_stock}</h5>
+            <button>Add to cart</button>
+        </div>
+    );
+}
+```

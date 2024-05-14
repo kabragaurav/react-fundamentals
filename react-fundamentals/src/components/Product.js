@@ -3,15 +3,8 @@
  */
 import React from 'react';
 
-function Product() {
-    const data = {
-        id: 1,
-        name: 'Amazon Atta',
-        price: 1200,
-        image_url: "https://www.pillsbury.in/wp-content/uploads/2021/09/Organic-Atta_LS.jpg",
-        in_stock: 10,
-    };
-
+function Product(props) {
+    const data = props.data;
     return (
         <div>
             <img src={data.image_url}/>

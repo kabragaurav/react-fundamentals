@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import MyCustomComp from './components/MyCustomComp';
-import Product from './components/Product';
+import ProductList from './containers/ProductList';
 
 function App() {
 
@@ -28,13 +28,19 @@ function App() {
       </header>
     </div>
 
+    <hr/>
+
     <div className="App">
       <MyCustomComp/>
     </div>
 
+    <hr/>
+
     <div className="App">
-      <Product/>
+      <ProductList/>
     </div>
+
+    <hr/>
     </>
     
   );
