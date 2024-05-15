@@ -153,4 +153,60 @@ function ProductList() {
 }
 ```
 Caution:
-NEVER use list indexes as keys. Say item `A` had index 0 initially, user applied filter and in new result, `A` now has index 1. If index were used as keys, React will re-render `A` which is not desired.
+NEVER use list indexes as keys. Say item `A` had index 0 initially, user applied filter and in new result, `A` now has index 1. If index were used as keys, React will re-render `A` which is not desired. <br/>
+
+## State
+1. UI updates happen through states (stateful components)
+2. State should always be initialized
+3. State should be updated immutabily, else no re-rendering happens
+
+Below does not re-render (stateless):
+```
+let data = [];
+getProducts()
+    .then(res => {
+        console.log(res);
+        data = res.data;
+    })
+    .catch(ex => alert(ex));
+
+return (
+    <div> 
+        {
+            data.map(item => <Product data={item}
+                                        btnClick={() => alert('gaurav kabra')}
+                                        key={item.productId}/>)
+        }
+    </div>
+)
+```
+
+Below will (`useState` is a built-in hook to make stateful):
+```
+import { useState } from 'react';
+
+// some code
+
+function ProductList() {
+    let [data, setData] = useState([]);
+    
+    getProducts()
+        .then(res => {
+            console.log(res);
+            setData(res.data);
+        })
+        .catch(ex => alert(ex));
+
+    return (
+        <div> 
+            {
+                data.map(item => <Product data={item}
+                                            btnClick={() => alert('gaurav kabra')}
+                                            key={item.productId}/>)
+            }
+        </div>
+    )
+}
+```
+
+

@@ -5,13 +5,15 @@ import React from 'react';
 
 function Product(props) {
     const data = props.data;
+    console.log("Hi");
+    console.log(data);
     return (
         <div>
-            <img src={data.image_url}/>
-            <h5>{data.name}</h5>
-            <h5>{data.price}</h5>
-            <h5>{data.in_stock}</h5>
-            {data.in_stock > 0 ? <button onClick={() => props.btnClick()}>Add to cart</button>
+            <img src={data.productImage}/>
+            <h5>{data.productName}</h5>
+            <h5>{data.productPrice}</h5>
+            <h5>{data.productStock}</h5>
+            {data.productStock > 0 ? <button onClick={() => props.btnClick()}>Add to cart</button>
                 : <p> Out of stock </p>}
         </div>
     );
