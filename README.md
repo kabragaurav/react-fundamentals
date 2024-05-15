@@ -209,12 +209,7 @@ function ProductList() {
 }
 ```
 ### useEffect
-But problem is it will make web call then again on re-rendering execute whole code and again and again... (Network tab infinite calls). 
-[Link to My Video](./assets/videos/no_use_effect.mov)
-<video width="320" height="240" controls>
-  <source src="./assets/videos/no_use_effect.mov" type="video/mov">
-  Your browser does not support the video tag.
-</video>
+But problem is it will make web call then again on re-rendering execute whole code and again and again... (Network tab infinite calls). See [Network Tab Rec](./assets/videos/no_use_effect.mov)
 
 So lifecycle:
 1. Mounting - data fetch, first render (Note that we need `{}` after `() =>`, else it will unmount)
