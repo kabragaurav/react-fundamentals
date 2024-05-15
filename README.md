@@ -152,3 +152,5 @@ function ProductList() {
     )
 }
 ```
+Caution:
+NEVER use list indexes as keys. Say item `A` had index 0 initially, user applied filter and in new result, `A` now has index 1. If index were used as keys, React will re-render `A` which is not desired.
