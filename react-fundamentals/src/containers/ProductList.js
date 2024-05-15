@@ -3,18 +3,23 @@
  */
 import React from 'react';
 import { useState } from 'react';
+import { useEffect } from 'react';
 import Product from '../components/Product';
 import { getProducts } from '../services/ProductService';
 
 function ProductList() {
     let [data, setData] = useState([]);
-    
-    getProducts()
-        .then(res => {
-            console.log(res);
-            setData(res.data);
-        })
-        .catch(ex => alert(ex));
+
+    const populateData = () => getProducts()
+            .then(res => {
+                console.log(res);
+                setData(res.data);
+            })
+            .catch(ex => alert(ex));
+
+    useEffect(() => {
+        populateData()
+    }, []);
 
     return (
         <div> 

@@ -209,4 +209,11 @@ function ProductList() {
 }
 ```
 
+But problem is it will make web call then again on re-rendering execute whole code and again and again... (Network tab infinite calls). So lifecycle:
+1. Mounting - data fetch, first render
+2. Updating - 
+3. Unmounting
+
+`useEffect` hook takes 2 args - effect func and dependency on which func is invoked. Can have multiple `useEffect` implementations
+
 

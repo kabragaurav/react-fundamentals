@@ -1,3 +1,6 @@
+/**
+ * Component for making web call
+ */
 import Axios from 'axios';
 
 export const getProducts = () => {
