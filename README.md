@@ -155,7 +155,7 @@ function ProductList() {
 Caution:
 NEVER use list indexes as keys. Say item `A` had index 0 initially, user applied filter and in new result, `A` now has index 1. If index were used as keys, React will re-render `A` which is not desired. <br/>
 
-## State
+## useState
 1. UI updates happen through states (stateful components)
 2. State should always be initialized
 3. State should be updated immutabily, else no re-rendering happens
@@ -208,11 +208,38 @@ function ProductList() {
     )
 }
 ```
+### useEffect
+But problem is it will make web call then again on re-rendering execute whole code and again and again... (Network tab infinite calls). 
+[Link to My Video](./assets/videos/no_use_effect.mov)
+<video width="320" height="240" controls>
+  <source src="./assets/videos/no_use_effect.mov" type="video/mov">
+  Your browser does not support the video tag.
+</video>
 
-But problem is it will make web call then again on re-rendering execute whole code and again and again... (Network tab infinite calls). So lifecycle:
-1. Mounting - data fetch, first render
+So lifecycle:
+1. Mounting - data fetch, first render (Note that we need `{}` after `() =>`, else it will unmount)
+```
+useEffect(() => {
+        // executed only once
+    }, []
+)
+```
 2. Updating - 
+```
+useEffect(() => {
+        // executed whenever state/props changes
+    }, [state, props]
+)
+```
 3. Unmounting
+```
+useEffect(() => {
+    return () => {
+        // unload
+        }
+    }, []
+)
+```
 
 `useEffect` hook takes 2 args - effect func and dependency on which func is invoked. Can have multiple `useEffect` implementations
 
