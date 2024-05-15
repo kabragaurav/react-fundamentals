@@ -79,10 +79,9 @@ return (
 
 ### Communication
 1. Communication always happens Parent <=> Child. So, parent cannot talk directly to grandchild or vice-versa.
-2. Parent to child: props
-
+2. Parent to child: props (properties)
+3. Child to parent: props (events)
 Parent:
-
 ```
 function ProductList() {
     const data = {
@@ -95,7 +94,8 @@ function ProductList() {
 
     return (
         <div>
-            <Product data={data}/>
+            <Product data={data}
+                     btnClick={() => alert('gaurav kabra')}/>
         </div>
     )
 }
@@ -111,12 +111,11 @@ function Product(props) {
             <h5>{data.name}</h5>
             <h5>{data.price}</h5>
             <h5>{data.in_stock}</h5>
-            <button>Add to cart</button>
+            <button onClick={() => props.btnClick()}>Add to cart</button>
         </div>
     );
 }
 ```
-
 Only Product has props,
 
 <img src="assets/images/p_prop.png"/>

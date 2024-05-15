@@ -15,7 +15,8 @@ function ProductList() {
 
     return (
         <div>
-            <Product data={data}/>
+            <Product data={data}
+                     btnClick={() => alert('gaurav kabra')}/>
         </div>
     )
 }

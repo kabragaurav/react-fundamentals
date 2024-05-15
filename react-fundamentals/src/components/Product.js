@@ -11,7 +11,8 @@ function Product(props) {
             <h5>{data.name}</h5>
             <h5>{data.price}</h5>
             <h5>{data.in_stock}</h5>
-            <button>Add to cart</button>
+            {data.in_stock > 0 ? <button onClick={() => props.btnClick()}>Add to cart</button>
+                : null}
         </div>
     );
 }
