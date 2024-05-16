@@ -5,7 +5,6 @@ import React from 'react';
 
 function Product(props) {
     const data = props.data;
-    console.log(data);
     return (
         <div>
             <img src={data.productImage}/>

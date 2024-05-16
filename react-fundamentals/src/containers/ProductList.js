@@ -6,20 +6,26 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Product from '../components/Product';
 import { getProducts } from '../services/ProductService';
+import useProducts from '../hooks/useProducts';
 
 function ProductList() {
-    let [data, setData] = useState([]);
+    // If you don't use hook useProducts uncomment below code
+    /*
+        let [data, setData] = useState([]);
 
-    const populateData = () => getProducts()
-            .then(res => {
-                console.log(res);
-                setData(res.data);
-            })
-            .catch(ex => alert(ex));
+        const populateData = () => getProducts()
+                .then(res => {
+                    console.log(res);
+                    setData(res.data);
+                })
+                .catch(ex => alert(ex));
 
-    useEffect(() => {
-        populateData()
-    }, []);
+        useEffect(() => {
+            populateData()
+        }, []);
+    */
+
+    let data = useProducts();
 
     return (
         <div> 

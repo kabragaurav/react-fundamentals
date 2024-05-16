@@ -1,5 +1,5 @@
 /**
- * Component for making web call
+ * Hook for making web call
  */
 import Axios from 'axios';
 
