@@ -253,4 +253,31 @@ useEffect(() => {
 ## Class Based Components
 We have one more way to mitigate infinite calls - using Class based component. Only logic written in `render()` is executed again and again. Also, `state` is natively available.
 
+A component returns a UI comp, but a hook returns a data element.
 
+## Pure Component
+When user selects a location (say Hyd) in BookMyShow and tries changing it but again clicks on Hyd, ideally re-rendering should not happen but in below code it will happen even if we change A => A and B => B.
+```
+class MyCustomPureComp extends React.Component {
+    state = {location: "hyd"};
+
+    render() {
+        console.log("I am re-rendering");
+        return (
+            <div>
+                <p>{this.state.location}</p>
+                <button onClick={() => this.setState({location: "hyd"})}>hyd</button>
+                <button onClick={() => this.setState({location: "blr"})}>blr</button>
+            </div>
+        );
+    }
+}
+```
+
+So we use PureComponent, rest all will be same
+```
+class MyCustomPureComp extends React.PureComponent {
+    ...
+}
+```
+Functional components are by-default pure components.

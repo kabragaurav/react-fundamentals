@@ -3,6 +3,7 @@ import './App.css';
 import MyCustomComp from './components/MyCustomComp';
 import ProductList from './containers/ProductList';
 import MyCustomClassComp from './components/MyCustomClassComp';
+import MyCustomPureComp from './components/MyCustomPureComp';
 
 function App() {
 
@@ -30,6 +31,10 @@ function App() {
     </div>
 
     <hr/>
+
+    <div class="App">
+      <MyCustomPureComp/>
+    </div>
 
     <div className="App">
       <MyCustomComp/>
