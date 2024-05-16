@@ -1,5 +1,4 @@
 # React
-
 ### Installation
 - VS Code
 - Node
@@ -307,3 +306,6 @@ class MyCustomCompToBePure extends React.Component {
 
 Note that `shouldComponentUpdate` method should not be used with `PureComponent` to avoid perf issue (since two logics - your and built-in will start executing, leading perf issue).
 
+## Error Boundary
+Error in one component should not affect another. Error boundary is only possible with Class component. <br/>
+By default, if a component throws error, React removes it from UI silently. Wrap it in error boundary to have a fallback UI.
