@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import MyCustomComp from './components/MyCustomComp';
 import ProductList from './containers/ProductList';
+import MyCustomClassComp from './components/MyCustomClassComp';
 
 function App() {
 
@@ -38,6 +39,12 @@ function App() {
 
     <div className="App">
       <ProductList/>
+    </div>
+
+    <hr/>
+
+    <div className="App">
+      <MyCustomClassComp/>
     </div>
 
     <hr/>

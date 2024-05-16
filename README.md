@@ -211,7 +211,19 @@ function ProductList() {
 ### useEffect
 But problem is it will make web call then again on re-rendering execute whole code and again and again... (Network tab infinite calls). See [Network Tab Rec](./assets/videos/no_use_effect.mov)
 
-So lifecycle:
+Using `useEffect` lifecycle is managed:
+```
+Mounting:
+ctor()
+render()
+componentDidMount()
+
+Updating:
+render()
+
+Unmounting:
+render()
+```
 1. Mounting - data fetch, first render (Note that we need `{}` after `() =>`, else it will unmount)
 ```
 useEffect(() => {
@@ -237,5 +249,8 @@ useEffect(() => {
 ```
 
 `useEffect` hook takes 2 args - effect func and dependency on which func is invoked. Can have multiple `useEffect` implementations
+
+## Class Based Components
+We have one more way to mitigate infinite calls - using Class based component. Only logic written in `render()` is executed again and again. Also, `state` is natively available.
 
 

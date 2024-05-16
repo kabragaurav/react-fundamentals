@@ -5,7 +5,6 @@ import React from 'react';
 
 function Product(props) {
     const data = props.data;
-    console.log("Hi");
     console.log(data);
     return (
         <div>
