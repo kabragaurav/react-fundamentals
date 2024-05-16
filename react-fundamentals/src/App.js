@@ -4,6 +4,7 @@ import MyCustomComp from './components/MyCustomComp';
 import ProductList from './containers/ProductList';
 import MyCustomClassComp from './components/MyCustomClassComp';
 import MyCustomPureComp from './components/MyCustomPureComp';
+import MyCustomCompToBePure from './components/MyCustomCompToBePure';
 
 function App() {
 
@@ -28,6 +29,12 @@ function App() {
           Learn React
         </a>
       </header>
+    </div>
+
+    <hr/>
+
+    <div class="App">
+      <MyCustomCompToBePure/>
     </div>
 
     <hr/>
