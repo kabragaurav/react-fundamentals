@@ -28,6 +28,7 @@ create-react-app <app_name>
 - Components in React are just like HTML tags 
 - Virtual DOM : Traditionally, all records are updated (even unchanged ones, as can be seen from Dev Console -> Elements -> highlighting blink). So in React, clone is created with latest values and then only diff is rendered (reconciliation). And clone is created only once and then incrementally changed. E.g. applying filters on Amazon will result in some results already on UI
 - `ReactDOM` is virtual DOM in React and it builds by finding element with ID `root` (see `index.js`). So as soon as we change outside virtual DOM, React cannot help
+`document.getElement...` will give JS DOM, not React's DOM. Use `useRef()` instead
 - We can write HTML in React code and hence called JSX
 - Redux is state management in JS and since React does not have one, Redux is used
 
@@ -308,4 +309,30 @@ Note that `shouldComponentUpdate` method should not be used with `PureComponent`
 
 ## Error Boundary
 Error in one component should not affect another. Error boundary is only possible with Class component. <br/>
-By default, if a component throws error, React removes it from UI silently. Wrap it in error boundary to have a fallback UI.
+By default, if a component throws error, React removes it from UI silently. Wrap it in error boundary to have a fallback UI. <br/>
+Works only in prod. In development mode, it will still crash.
+
+
+## Event
+```
+function Checkout() {
+    const [name, setName] = useState('');
+    const emailRef = useRef();
+
+    const saveData = (evt) => {
+        evt.preventDefault();       // prevents refresh on submit - the default behaviour
+        console.log('saved data', name, emailRef.current.value);
+    }
+
+    return(
+        <form onSubmit={(evt) => saveData(evt)}>
+            {/* controlled way */}
+            <input placeholder="name" onChange={(evt) => setName(evt.target.value)}/>
+            {/* un-controlled way */}
+            <input placeholder="email" ref={emailRef}/>
+            <button type="submit">Submit</button>
+        </form>
+    );
+}
+```
+Note: Controlled is preferred since form values and validations are easier in that way.
