@@ -5,6 +5,7 @@ import ProductList from './containers/ProductList';
 import MyCustomClassComp from './components/MyCustomClassComp';
 import MyCustomPureComp from './components/MyCustomPureComp';
 import MyCustomCompToBePure from './components/MyCustomCompToBePure';
+import Checkout from './components/Checkout';
 
 function App() {
 
@@ -29,37 +30,20 @@ function App() {
           Learn React
         </a>
       </header>
+      <hr/>
+
+      <Checkout/><hr/>
+
+      <MyCustomCompToBePure/><hr/>
+
+      <MyCustomPureComp/><hr/>
+
+      <MyCustomComp/><hr/>
+      
+      <ProductList/><hr/>
+      
+      <MyCustomClassComp/><hr/>
     </div>
-
-    <hr/>
-
-    <div class="App">
-      <MyCustomCompToBePure/>
-    </div>
-
-    <hr/>
-
-    <div class="App">
-      <MyCustomPureComp/>
-    </div>
-
-    <div className="App">
-      <MyCustomComp/>
-    </div>
-
-    <hr/>
-
-    <div className="App">
-      <ProductList/>
-    </div>
-
-    <hr/>
-
-    <div className="App">
-      <MyCustomClassComp/>
-    </div>
-
-    <hr/>
     </>
     
   );
